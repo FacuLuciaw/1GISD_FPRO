@@ -1,0 +1,17 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace.backup
+
+# Archivos compilados y binarios
+*.elf
+*.bin
+*.hex
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,18 +1,30 @@
 #include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
-
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+#define LEN 10
+int numbers[LEN];
+char text[50];
+void setup()
+{
+    Serial.begin(9600);
+    // Array initialization
+    int i;
+    for (i = 0; i < LEN; i++)
+    {
+        numbers[i] = i + 1;
+    }
 }
+void loop()
+{
+    // Factorial computation:
+    int factorial;
+    int F = 1;
+    int i;
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+    for (i = 0; i < LEN; i++)
+    {
+        F = F * numbers[i];
+    }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    factorial = F;
+    sprintf(text, "Factorial=%d", factorial);
+    Serial.println(text);
 }
